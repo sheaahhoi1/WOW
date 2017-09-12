@@ -1,0 +1,98 @@
+cscript c:\windows\system32\slmgr.vbs upk
+Microsoft (R) Windows Script Host Version 5.812
+Copyright (C) Microsoft Corp. 1996-2006, 著作權所有，並保留一切權利
+
+無效的命令參數組合。
+
+Windows 軟體授權管理工具
+使用方式: slmgr.vbs [MachineName [User Password]] [<Option>]
+           MachineName: 遠端電腦的名稱 (預設是本機電腦)
+           User:        擁有遠端電腦之必要權限的帳戶
+           Password:    上述帳戶的密碼
+
+一般選項:
+/ipk <Product Key>
+    安裝產品金鑰 (取代現有的金鑰)
+/ato [啟用識別碼]
+    啟用 Windows
+/dli [啟用識別碼 | All]
+    顯示授權資訊 (預設: 目前的授權)
+/dlv [啟用識別碼 | All]
+    顯示詳細授權資訊 (預設: 目前的授權)
+/xpr [啟用識別碼]
+    目前授權狀態的到期日
+
+進階選項:
+/cpky
+    從登錄清除產品金鑰 (預防揭露攻擊)
+/ilc <License file>
+    安裝授權
+/rilc
+    重新安裝系統授權檔案
+/rearm
+    重設電腦的授權狀態
+/rearm-app <應用程式識別碼>
+    重設指定應用程式的授權狀態
+/rearm-sku <啟用識別碼>
+    重設指定 SKU 的授權狀態
+/upk [啟用識別碼]
+    解除安裝產品金鑰
+
+/dti [啟用識別碼]
+    顯示離線啟用的安裝識別碼
+/atp <Confirmation ID> [啟用識別碼]
+    利用使用者提供的確認識別碼啟用產品
+
+大量授權: 金鑰管理服務 (KMS) 用戶端選項:
+/skms <Name[:Port] | : port> [啟用識別碼]
+    設定此電腦將使用之 KMS 電腦的名稱和/或連接埠。IPv6 位址必須以 [hostname]:port 格式來指定
+/ckms [啟用識別碼]
+    清除已使用之 KMS 電腦的名稱 (將連接埠設定為預設值)
+/skms-domain <FQDN> [啟用識別碼]
+    設定可在其中找到所有 KMS SRV 記錄的特定 DNS 網域。若透過 /skms 選項設定特定單一 KMS 主機，則此設定沒有作用。
+/ckms-domain [啟用識別碼]
+    清除可在其中找到所有 KMS SRV 記錄的特定 DNS 網域。若透過 /skms 設定，將使用特定 KMS 主機。否則，將使用預設的 KMS 自 動探索。
+/skhc
+    啟用 KMS 主機快取
+/ckhc
+    停用 KMS 主機快取
+
+大量授權: 權杖型啟用選項:
+/lil
+    列出已安裝的權杖型啟用發行授權
+/ril <ILID> <ILvID>
+    移除已安裝的權杖型啟用發行授權
+/ltc
+    列出權杖型啟用憑證
+/fta <憑證指紋> [<PIN>]
+    強制權杖型啟用
+
+大量授權: 金鑰管理服務 (KMS) 選項:
+/sprt <Port>
+    設定 KMS 將用來與用戶端通訊的 TCP 連接埠
+/sai <啟用間隔>
+    設定未啟用之用戶端嘗試 KMS 連線的間隔 (分鐘)。啟用間隔必須介於 15 分鐘 (最小) 到 30 天 (最大) 之間，建議使用預設值 (2 小時)。
+/sri <更新間隔>
+    設定未啟用之用戶端嘗試 KMS 連線的更新間隔 (分鐘)。更新間隔必須介於 15 分鐘 (最小) 到 30 天 (最大) 之間，建議使用預設值 (7 天)。
+/sdns
+    啟用由 KMS 發佈 DNS 的功能 (預設值)
+/cdns
+    停用由 KMS 發佈 DNS 的功能
+/spri
+    將 KMS 優先順序設定為標準 (預設值)
+/cpri
+    將 KMS 優先順序設定為低
+/act-type [Activation-Type] [啟用識別碼]
+    將啟用類型設定為 1 (對於 AD)、2 (對於 KMS)、3 (對於權杖) 或 0 (對於 All)。
+
+大量授權: Active Directory (AD) 啟用選項:
+/ad-activation-online <Product Key> [Activation Object name]
+    利用使用者提供的產品金鑰啟用 AD (Active Directory) 樹系
+/ad-activation-get-iid <Product Key>
+    顯示 AD (Active Directory) 樹系的安裝識別碼
+/ad-activation-apply-cid <Product Key> <Confirmation ID> [Activation Object name]
+    利用使用者提供的產品金鑰與確認識別碼啟用 AD (Active Directory) 樹系
+/ao-list
+    顯示 AD (Active Directory) 中的啟用物件
+/del-ao <Activation Object DN | Activation Object RDN>
+    根據使用者提供的啟用物件刪除 AD (Active Directory) 中的啟用物件
